@@ -1,0 +1,132 @@
+#include <iostream>
+using namespace std;
+int sumOfDigits(int n) {
+  int sum = 0;
+  while (n > 0) {
+    
+    sum += n % 10;
+    
+    n /= 10;
+  }
+  return sum;
+}
+
+int main() {
+  int arr[] = {12, 34, 56, 78,90};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  int index = 2;
+  if (index >= 0 && index < size) {
+    cout << "The element at index " << index << " is " << arr[index] << endl;
+    cout << "The sum of digits of " << arr[index] << " is " << sumOfDigits(arr[index]) << endl;
+  } 
+  else {
+    cout << "Invalid index" << endl;
+  }
+  return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int reverse(int n) {
+  int rev = 0;
+  while (n > 0) { 
+ rev = rev * 10 + n % 10;
+    n /= 10;
+  }
+  return rev;
+}
+
+int main() {
+  int num = 56789;
+  cout << "The number is " << num << endl;
+  cout << "The reverse of " << num << " is " << reverse(num) << endl;
+  return 0;
+}
+...............................................................................................................................................................
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+bool isArmstrong(int n) {
+  int num = n;
+  int digits = 0;
+  while (n > 0) {
+    digits++;
+    n /= 10;
+  }
+  n = num;
+  int sum = 0;
+  while (n > 0) {
+    sum += pow(n % 10, digits);
+    n /= 10;
+  }
+  return sum == num;
+}
+
+int main() {
+  cout << "The Armstrong numbers from 1 to 100 are:" << endl;
+  for (int i = 1; i <= 100; i++) {
+    if (isArmstrong(i)) {
+      cout << i << " ";
+    }
+  }
+  cout << endl;
+  return 0;
+}
+..........................................................................................................................................................................
+
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+int main() {
+
+  int bin = 101;
+  int dec = 6;
+  cout << "The binary number " << bin << " is " << bitset<100>(bin).to_ulong() << " in decimal." << endl;
+  cout << "The decimal number " << dec << " is " << bitset<100>(dec) << " in binary." << endl;
+  return 0;
+}
+
+.................................................................................................................................................
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int size;
+  cout << "Enter the size of the array: ";
+  cin >> size;
+  
+  int arr[size];
+  cout << "Enter the elements of the array: ";
+  for (int i = 0; i < size; i++) {
+    cin >> arr[i];
+  }
+  int sum = 0;
+  for (int i = 0; i < size; i++) {
+    sum += arr[i];
+  }
+  cout << "The sum of the elements of the array is " << sum << endl;
+  return 0;
+}
+.......................................................................................................................................................
+
+#include <stdio.h>
+
+int main() {
+  int size;
+  printf("Enter the size of the arrays: ");
+  scanf("%d", &size);
+  int arr1[size], arr2[size];
+  printf("Enter the elements of the first array: ");
+  for (int i = 0; i < size; i++) {
+    scanf("%d", &arr1[i]);
+  }
+  printf("Enter the elements of the second array: ");
+  for (int i = 0; i < size; i++) {
+    scanf("%d", &arr2[i]);
+  }
+ printf("\n");
+  return 0;
+}
